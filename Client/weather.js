@@ -1,61 +1,59 @@
-// Get user's geolocation
-var lat,
-  lon,
-  tWeather,
+var
   icon,
   celsius,
-  farenheit,
-  iconNumber,
   minCelsius,
-  maxCelsius,
-  minF,
-  maxF;
+  maxCelsius;
+$("document").ready(function(){
+  
+  $(".js-ajax-php-json").submit(function(){
 
+    var villeTx = $('#ville').val();
 
-$.getJSON('https://ipapi.co/json/', function(data){
+    var data = {
+      "ville": villeTx
+    };
 
+    data = $(this).serialize() + "&" + $.param(data);
 
+    $.ajax({
+      type: "POST",
+      dataType: "json",
+      url: "../Serveur/index.php",
+      data: data,
+      success: function(data) {
 
-  // reaching the location API
+         icon = ("http://openweathermap.org/img/w/" + data["Icon"] + ".png");
 
-console.log(data);
-    // Finding the latitude and longitude, to be able to find the location
-    $.each(data, function(k, v) {});
-    lat = data.latitude;
-    lon = data.longitude;
+         $("#graphic").empty();
+         $("#graphic").append('<img src="' + icon + '"/>');
+         $('#description').empty();
+         $('#description').append(data["description"]);
+         $('#city').empty();
+         $('#city').append(data["City"]);
+         $("#windSpeed").empty();
+         $("#windSpeed").append(data["speedwind"]);
+         $("#pressure").empty();
+         $("#pressure").append(data["pressure"] );
+         $("#humidity").empty();
+         $("#humidity").append(data["humidity"] + "%");
+         minCelsius = Math.floor(data["Min"] - 273.15);
+         maxCelsius = Math.floor(data["Max"] - 273.15);
+         $('#celsius').empty();
+         $('#celsius').append(data["temp"] + 'C');
+         $('#longitude').empty();
+         $('#longitude').append(data["longitude"] + ' C');
+         $('#latitude').empty();
+         $('#latitude').append(data["latitude"] + ' C');
+         $("#min").empty();
+         $("#min").append( data["Max"] + ' C');
+         $("#max").empty();
+         $("#max").append( data["Min"] + ' C');
 
-    $("#latitude").append(lat);
-    $("#longitude").append(lon);
-
-    $.getJSON("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=059dcee9c15c93a942eb1f38b72876be", function(weatherData) {
-      $.each(weatherData, function(j, b) {});
-      console.log(weatherData);
-      // fetch image and display weather and icon down below
-      tWeather = weatherData.main.temp;
-      iconNumber = weatherData.weather[0].icon;
-
-      icon = ("http://openweathermap.org/img/w/" + iconNumber + ".png");
-      $("#graphic").append('<img src="' + icon + '"/>');
-
-      $('#description').append(weatherData.weather[0].description);
-      $('#city').append(weatherData.name);
-      $("#windSpeed").append(weatherData.wind.speed + "km/h");
-      $("#pressure").append(weatherData.main.pressure + "º");
-      $("#humidity").append(weatherData.main.humidity + "%");
-      minF = Math.floor(weatherData.main.temp_min * 9/5 - 459.67);
-      maxF = Math.floor(weatherData.main.temp_max * 9/5 - 459.67);
-
-      // translate Kelvin to Celsius
-      celsius = Math.floor(weatherData.main.temp - 273.15);
-
-      minCelsius = Math.floor(weatherData.main.temp_min - 273.15);
-      maxCelsius = Math.floor(weatherData.main.temp_max - 273.15);
-      // translate Kelvin to Farenhait T(K) × 9/5 - 459.67
-      farenheit = Math.floor(weatherData.main.temp * 9 / 5 - 459.67);
-
-      // display celsius by default
-      $('#celsius').append(celsius + 'ºC');
-      $("#min").append( minCelsius + 'ºC');
-      $("#max").append( maxCelsius + 'ºC');
+      },
+      error: function() {
+        alert("Erreur Ajax !");
+    }
     });
+    return false;
+  });
 });

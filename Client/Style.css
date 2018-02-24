@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Space+Mono');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:200,400,600,700,800');
+@import url("https://fonts.googleapis.com/css?family=Space+Mono");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:200,400,600,700,800");
 
 body {
   height: 100%;
-  background: #C95E67;
+  background: #c95e67;
   /* fallback for old browsers */
 }
 
 h1 {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 29px;
-  color: #C95E67;
+  color: #c95e67;
 }
 
-.text{
-  font-family: 'Space Mono', Helvetica, sans-serif;
+.text {
+  font-family: "Space Mono", Helvetica, sans-serif;
   font-size: 14px;
   color: #333;
 }
@@ -33,7 +33,7 @@ h1 {
 }
 
 .weather-icon,
-.title{
+.title {
   grid-column: 1/4;
   margin: 0 auto;
   text-align: center;
@@ -42,29 +42,29 @@ h1 {
   padding: 15px 100px;
 }
 
-.important-info{
+.important-info {
   grid-column: 1;
 }
 
-.description-container{
+.description-container {
   background: #efefef;
   border-radius: 4px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 450px;
   margin: 0 auto;
-  padding:20px 0px;
+  padding: 20px 0px;
 }
 
 .block-1 {
   grid-column: 1;
   padding: 10px;
 }
-.block-2{
+.block-2 {
   grid-column: 2;
   padding: 10px;
 }
-.block-3{
+.block-3 {
   grid-column: 3;
   padding: 10px;
 }
@@ -74,9 +74,9 @@ h1 {
 }
 
 .temp-info {
-  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-family: "Open Sans", Helvetica, sans-serif;
   font-size: 65px;
-  color: #C95E67;
+  color: #c95e67;
   font-weight: 600;
 }
 
@@ -89,8 +89,8 @@ h1 {
   width: 50%;
   height: 100%;
   z-index: -1;
-  -webkit-transition: .3s ease-out all;
-  transition: .3s ease-out all;
+  -webkit-transition: 0.3s ease-out all;
+  transition: 0.3s ease-out all;
 }
 
 .signature {

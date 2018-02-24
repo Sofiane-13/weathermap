@@ -1,5 +1,5 @@
-
 <html>
+
 <head>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -8,50 +8,56 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="Style.css" media="screen" />
 </head>
+
 <body>
   <div align="center">
     <form action="../Serveur/index.php" class="js-ajax-php-json" method="post" accept-charset="utf-8">
-    <input type="text" name="Ville" id="ville" value="" placeholder="Nom d'une ville" class="w3-input"/>
-    <input type="submit" name="submit" value="Rechercher" class="btn btn-info btn-lg " />
+      <input type="text" name="Ville" id="ville" value="" placeholder="Nom d'une ville" class="w3-input" />
+      <input type="submit" name="submit" value="Rechercher" class="btn btn-info btn-lg " />
     </form>
   </div>
-  <div id="weather">
-  <div class="container">
-    <div class="title">
-      <h1 id="city"></h1>
-      <div id="graphic" class="weather-icon"></div>
-      <div id="description" class='important-info text'></div>
-      <div id="farenheit" class="temp-info"></div>
-      <div id="celsius" class="temp-info"></div>
-    </div>
+  <div class="imgmeteo" align="center">
+    <img src="https://www.tvr.bzh/sites/default/files/uploads/images/METEO.png" style="width: 600px;">
   </div>
-  <div class="description-container">
-    <div class="block-1">
-      <div class="text">
-        <span>Max</span>
-        <span id="max" class="important-info"> </span>
+  <div class="weather" style="visibility: hidden;">
+    <div class="container">
+      <div class="title">
+        <h1 id="city"></h1>
+        <div id="graphic" class="weather-icon"></div>
+        <div id="description" class='important-info text'></div>
+        <div id="farenheit" class="temp-info"></div>
+        <div id="celsius" class="temp-info"></div>
       </div>
-      <div class="text">
-        <span>Min</span>
-      <span id="min" class='important-info'> </span>
-      </div>
+    </div>
+    <div class="description-container">
+      <div class="block-1">
+        <div class="text">
+          <span>Max</span>
+          <span id="max" class="important-info"> </span>
+        </div>
+        <div class="text">
+          <span>Min</span>
+          <span id="min" class='important-info'> </span>
+        </div>
 
-    </div>
-    <div class="block-2">
-      <span>Lon :</span>
-      <div id="longitude" class=" text important-info"> </div>
-      <span>Lat :</span>
-      <div id="latitude" class="text important-info"> </div>
-    </div>
-    <div class="block-3">
-      <span>Humidity:</span>
-      <div id="humidity" class="text important-info"> </div>
-      <span>Pressure:</span>
-      <div id="pressure" class="text important-info"> </div>
-      <span>Winds:</span>
-      <div id="windSpeed" class="text important-info"> </div>
+      </div>
+      <div class="block-2">
+        <span>Lon :</span>
+        <div id="longitude" class=" text important-info"> </div>
+        <span>Lat :</span>
+        <div id="latitude" class="text important-info"> </div>
+      </div>
+      <div class="block-3">
+        <span>Humidity:</span>
+        <div id="humidity" class="text important-info"> </div>
+        <span>Pressure:</span>
+        <div id="pressure" class="text important-info"> </div>
+        <span>Winds:</span>
+        <div id="windSpeed" class="text important-info"> </div>
+      </div>
     </div>
   </div>
-</div>
+
 </body>
+
 </html>

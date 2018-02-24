@@ -107,3 +107,9 @@ h1 {
   text-transform: uppercase;
   text-decoration: none;
 }
+
+.text-bar {
+  color: khaki;
+  font-size: 30px;
+  font-style: italic;
+}

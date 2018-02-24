@@ -40,7 +40,7 @@ $return["population"] = $population;
 
 
 
-for ($i = 0; $i <= 30; $i++) {
+for ($i = 1; $i <= 20; $i++) {
   $return["temp".$i] = $clima->list[$i-1]->main->temp;
   $return["Max".$i] = $clima->list[$i-1]->main->temp_max;
   $return["Min".$i] = $clima->list[$i-1]->main->temp_min;

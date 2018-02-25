@@ -28,7 +28,7 @@ $("document").ready(function() {
             <div id="description" class='important-info text'>${
               data[`description${i}`]
             }</div>
-            <div id="celsius" class="temp-info">${data[`temp${i}`]}</div>
+            <div id="celsius" class="temp-info">${data[`temp${i}`]}°C</div>
           </div>
         </div>
         <div class="description-container">

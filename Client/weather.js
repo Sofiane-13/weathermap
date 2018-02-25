@@ -84,9 +84,16 @@ $("document").ready(function() {
         </div>
           `);
         }
-
-        $(".imgmeteo").empty();
-        $(".weather").css("visibility", "visible");
+        if(data["City"]==null){
+          $(".weather").css("visibility", "hidden");
+          $(".imgmeteo").empty();
+          $(".imgmeteo").append(`<img src="https://static.neoparking.com/wp-content/themes/neoparking25/images/home-city/home-city-nantes.jpg" style="width: 600px;">`)
+          alert("This city does not exist !");
+        }
+        else {
+          $(".imgmeteo").empty();
+          $(".weather").css("visibility", "visible");
+        }
       },
       error: function() {
         alert("This city does not exist !");

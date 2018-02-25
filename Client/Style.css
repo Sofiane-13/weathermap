@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Space+Mono");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:200,400,600,700,800");
 
+
 body {
   height: 100%;
   background: #c95e67;
@@ -112,4 +113,10 @@ h1 {
   color: khaki;
   font-size: 30px;
   font-style: italic;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
 }

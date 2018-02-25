@@ -9,16 +9,15 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-inverse ">
-    <span class="text-bar">Météo du monde</span>
-    <form action="../Serveur/index.php" method="post" accept-charset="utf-8" class="js-ajax-php-json navbar-form navbar-right">
-      <div class="form-group">
-        <input type="text" name="Ville" id="ville" placeholder="Nom d'une ville" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-success">Rechercher</button>
-    </form>
-  </nav>
-
+<div class="topnav">
+  <span class="text-bar">Weather of the world</span>
+  <form action="../Serveur/index.php" method="post" accept-charset="utf-8" class="js-ajax-php-json navbar-form navbar-right">
+    <div class="form-group">
+      <input type="text" name="Ville" id="ville" placeholder="Name of a city" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success">Search</button>
+  </form>
+</div>
   <div class="imgmeteo" align="center">
     <img src="https://static.neoparking.com/wp-content/themes/neoparking25/images/home-city/home-city-nantes.jpg" style="width: 600px;">
   </div>
@@ -27,5 +26,4 @@
   </div>
 
 </body>
-
 </html>

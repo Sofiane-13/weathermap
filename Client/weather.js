@@ -55,7 +55,7 @@ $("document").ready(function() {
                 } </span>
               </strong>
             </div>
-    
+
           </div>
           <div class="block-2">
             <span>Lon :</span>
@@ -81,7 +81,7 @@ $("document").ready(function() {
               data[`speedwind${i}`]
             } Km/h</div>
           </div>
-        </div>  
+        </div>
           `);
         }
 
@@ -89,7 +89,7 @@ $("document").ready(function() {
         $(".weather").css("visibility", "visible");
       },
       error: function() {
-        alert("Erreur Ajax !");
+        alert("This city does not exist !");
       }
     });
     return false;
